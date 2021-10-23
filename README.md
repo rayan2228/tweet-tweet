@@ -1,2 +1,3 @@
 # tweet-tweet
-live link git@github.com:rayan2228/tweet-tweet.git
+live link 
+https://rayan2228.github.io/tweet-tweet/
