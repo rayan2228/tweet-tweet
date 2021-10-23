@@ -1,0 +1,105 @@
+@media (min-width:320px) and (max-width:575px) {
+    #searchtextbox {
+        width: 280px;
+    }
+
+    .todo-outer h1 {
+        font-size: 37px !important;
+    }
+
+    #addtweetinput {
+        width: auto;
+        margin: 10px 0px;
+    }
+
+    #addtweetbtn {
+        margin: 10px 9px;
+    }
+
+    #updatetweetbtn {
+        margin: 10px 8px;
+    }
+
+    #deleteallbtn {
+        margin: 10px 6px;
+    }
+
+    .list li {
+        flex-direction: column;
+    }
+
+    .list li .tweet-number {
+        width: 15%;
+    }
+
+    .list li .tweet-name {
+        width: auto;
+        overflow: scroll;
+    }
+
+    .list li .edit-tweet {
+        width: auto;
+    }
+
+    .list li .delete-tweet {
+        width: auto;
+    }
+    .todo-inner .chacheck {
+        position: absolute;
+        top: 29%;
+        right: -49px;
+        color: black;
+    }
+}
+@media (min-width:576px) and (max-width:767px) {
+    #searchtextbox {
+        width: 280px;
+    }
+
+    .todo-outer h1 {
+        font-size: 37px !important;
+    }
+
+    #addtweetinput {
+        margin: 10px 0px;
+    }
+
+    #addtweetbtn {
+        margin: 10px 9px;
+    }
+
+    #updatetweetbtn {
+        margin: 10px 8px;
+    }
+
+    #deleteallbtn {
+        margin: 10px 6px;
+    }
+
+    .list li {
+        flex-direction: column;
+    }
+
+    .list li .tweet-number {
+        width: 15%;
+    }
+
+    .list li .tweet-name {
+        width: auto;
+        overflow: scroll;
+    }
+
+    .list li .edit-tweet {
+        width: auto;
+    }
+
+    .list li .delete-tweet {
+        width: auto;
+    }
+    .todo-inner .chacheck {
+        position: absolute;
+        top: 29%;
+        right: -49px;
+        color: black;
+    }
+}
