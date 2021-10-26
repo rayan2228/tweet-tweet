@@ -79,6 +79,10 @@ section.todo-outer h1 {
 .list li .tweet-number {
     width: 5%;
 }
+.list li .tweet-time {
+    width: 17%;
+    color: rgb(126, 126, 126);
+}
 
 .list li .tweet-name {
     width: 50%;

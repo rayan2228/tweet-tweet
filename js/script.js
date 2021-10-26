@@ -30,10 +30,17 @@ const saveLocalStorage = () => {
         } else {
             tweet = JSON.parse(checkLocalStorage)
         }
-        tweet.push(addTweetInputElmVal)
+        const date = new Date().toDateString()
+        const hour = new Date().toLocaleTimeString()
+        const time = `${date} at ${hour}`
+        tweetInner ={
+            tweetName : addTweetInputElmVal,
+            time
+        }
+        tweet.push(tweetInner)
         localStorage.setItem("tweetStorage", JSON.stringify(tweet))
         showTweets()
-        addTweetInputElm.value = ""
+        addTweetInputElm.value = "" 
     }
 }
 
@@ -46,7 +53,7 @@ const showTweets = () => {
         tweet = JSON.parse(checkLocalStorage)
         let tweetList = ""
         tweet.forEach((item, index) => {
-            tweetList += `<li><span class="tweet-number">${index + 1}</span><span class="tweet-name">${item}</span><button type="button" class="edit-tweet" onclick="editTweet(${index})"><i
+            tweetList += `<li><span class="tweet-number">${index + 1}</span><span class="tweet-name">${item.tweetName}</span><span class="tweet-time">${item.time}</span><button type="button" class="edit-tweet" onclick="editTweet(${index})"><i
                 class="fas fa-edit"></i>Edit</button><button type="button"
             class="delete-tweet" onclick="deleteTweet(${index})"><i class="fas fa-trash-alt"></i>Delete</button></li>`
             tweetListElm.innerHTML = tweetList
@@ -58,7 +65,7 @@ const showTweets = () => {
 const editTweet = (index) => {
     checkLocalStorage = localStorage.getItem("tweetStorage")
     tweet = JSON.parse(checkLocalStorage)
-    addTweetInputElm.value = tweet[index]
+    addTweetInputElm.value = tweet[index].tweetName
     saveIndexElm.value = index
     updateTweetBtnElm.style.display = "block"
     addTweetBtnElm.style.display = "none"
@@ -69,7 +76,7 @@ const updateTweet = () => {
     checkLocalStorage = localStorage.getItem("tweetStorage")
     tweet = JSON.parse(checkLocalStorage)
     saveIndexVal = saveIndexElm.value
-    tweet[saveIndexVal] = addTweetInputElm.value
+    tweet[saveIndexVal].tweetName = addTweetInputElm.value
     localStorage.setItem("tweetStorage", JSON.stringify(tweet))
     showTweets()
     updateTweetBtnElm.style.display = "none"
@@ -130,7 +137,10 @@ const checkInput = () => {
         chacheckElm.style.color = "black"
     }
 }
+
 // call all functions
 allEvanListener()
 showTweets()
-/* <span class:"tweet-time">${time}</span> */
+
+
+
